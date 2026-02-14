@@ -1,13 +1,10 @@
 function fizzBuzz(number) {
-    if (number % 3 === 0 && number % 5 === 0)
-        console.log('FizzBuzz', number);
-    else if (number % 5 === 0)
-        console.log('Buzz', number);
-    else if (number % 3 === 0)
-        console.log('Fizz', number);
+  if (number % 15 === 0) return "FizzBuzz";
+  if (number % 3 === 0) return "Fizz";
+  if (number % 5 === 0) return "Buzz";
+  return String(number);
 }
 
-
-for (let i = 0; i < 100; i++) {
-    fizzBuzz(i);
+for (let i = 1; i <= 100; i++) {
+  console.log(fizzBuzz(i));
 }

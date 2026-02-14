@@ -1,7 +1,7 @@
-let pattern = "#";
-for (i = 0; i < 6; i++) {
-    for (j = i; j <= i; j++) {
-        console.log(pattern);
-        pattern = pattern + "#";
-    }
+const rows = 7;
+
+let pattern = "";
+for (let i = 0; i < rows; i++) {
+  pattern += "#";
+  console.log(pattern);
 }

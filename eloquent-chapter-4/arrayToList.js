@@ -1,24 +1,15 @@
-const arrayToList = function (args) {
-    args.shift()
-    if (args.length === 1) {
-        return {
-            value: args[0],
-            rest: null
-        }
-    }
-    else {
-        return {
-            value: args[0],
-            rest: arrayToList(args)
-        }
-    }
+const arrayToList = function (items) {
+  let list = null;
 
-}
-let list = arrayToList([, 1, 2, 3, 4, 5, 6, 7]);
+  for (let i = items.length - 1; i >= 0; i--) {
+    list = {
+      value: items[i],
+      rest: list,
+    };
+  }
+
+  return list;
+};
+
+const list = arrayToList([1, 2, 3, 4, 5, 6, 7]);
 console.log(list);
-
-
-// let list = {};
-//     list.value = arguments[0][0];
-//     list.rest = { value: arguments[0][1], rest: { value: arguments[0][2], rest: null } }
-//     console.log(list);
